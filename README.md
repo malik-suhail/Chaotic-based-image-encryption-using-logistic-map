@@ -50,7 +50,7 @@ pip install numpy pillow matplotlib
 1. Clone the repository:
 
 \`\`\`bash
-git clone https://github.com/yourusername/Chaotic-based-image-encryption-using-logistic-map.git
+git clone https://github.com//malik-suhail/Chaotic-based-image-encryption-using-logistic-map.git
 \`\`\`
 
 2. Navigate to the project directory:
