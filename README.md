@@ -3,16 +3,26 @@
 
 This project demonstrates an image encryption technique based on **chaotic theory** using the **logistic map**. It scrambles image pixels according to a chaotic sequence, making the image unintelligible without the correct chaotic key.
 
+## Original Image
+
+<img src="image.jpg" alt="image" width="300"/>
+
+## Encrypted Image using Logistic map in grayscale
+
+<img src="encrypted_image.png" alt="image" width="300"/>
+
+## Decrypted Image in grayscale
+
+<img src="decrypted_image.png" alt="image" width="300"/>
+
 ## Table of Contents
 - [Introduction](#introduction)
 - [Features](#features)
 - [How It Works](#how-it-works)
 - [Prerequisites](#prerequisites)
-- [Installation](#installation)
 - [Usage](#usage)
 - [Customizing for RGB Images](#customizing-for-rgb-images)
 - [Future Enhancements](#future-enhancements)
-- [License](#license)
 
 ## Introduction
 
@@ -39,66 +49,29 @@ Before running the code, you need to install the following Python libraries:
 - **NumPy** (for numerical operations)
 - **Matplotlib** (for visualization)
 
-You can install these using the following command:
-
-\`\`\`bash
-pip install numpy pillow matplotlib
-\`\`\`
-
-## Installation
-
-1. Clone the repository:
-
-\`\`\`bash
-git clone https://github.com//malik-suhail/Chaotic-based-image-encryption-using-logistic-map.git
-\`\`\`
-
-2. Navigate to the project directory:
-
-\`\`\`bash
-cd Chaotic-based-image-encryption-using-logistic-map
-\`\`\`
 
 ## Usage
 
-### Encrypt an Image
+### Load image and generate a chaotic sequence
+Load an image by proving the path of the image to the image_path variable in the encrypt file.
+image_path = "image.jpg"
 
-To encrypt an image, you can use the \`scramble_image()\` function after generating a chaotic sequence with the logistic map.
+Generate chaotic sequence based on initial conditions (`r` and `x0`)
 
-Example:
+r = 3.99  # Control parameter
 
-\`\`\`python
-# Load image and generate a chaotic sequence
-image_data = load_image("input_image.jpg")
-chaotic_sequence = logistic_map(size=image_data.size, r=3.99, x0=0.5)
+x0 = 0.5  # Initial condition
 
-# Encrypt the image
-encrypted_image = scramble_image(image_data, chaotic_sequence)
-
-# Save and display the encrypted image
-save_image(encrypted_image, "encrypted_image.png")
-show_image(encrypted_image, "Encrypted Image")
-\`\`\`
 
 ### Decrypt an Image
 
 To decrypt the image, you use the same chaotic key (sequence) used during encryption.
 
-Example:
+### Load the encrypted image
+image_path = "encrypted_image.png"  # Path to the input image
 
-\`\`\`python
-# Load the encrypted image
-encrypted_image = load_image("encrypted_image.png")
 
-# Decrypt the image using the same chaotic sequence
-decrypted_image = descramble_image(encrypted_image, chaotic_sequence)
-
-# Save and display the decrypted image
-save_image(decrypted_image, "decrypted_image.png")
-show_image(decrypted_image, "Decrypted Image")
-\`\`\`
-
-### Customizing for RGB Images
+## Customizing for RGB Images
 
 By default, the project handles grayscale images. To extend it for **RGB images**, each color channel (Red, Green, Blue) should be encrypted individually:
 
@@ -113,7 +86,3 @@ This can be implemented with small modifications to the existing code.
 - Extend the project to support **RGB image encryption**.
 - Explore other chaotic systems like the Henon map or Lorenz system for stronger encryption.
 - Add an interface for customizing chaotic parameters (\`r\` and \`x0\`).
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
