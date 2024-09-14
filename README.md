@@ -17,6 +17,8 @@ This project demonstrates an image encryption technique based on **chaotic theor
 
 ## Table of Contents
 - [Introduction](#introduction)
+- [Chaotic Theory](#chaotic-theory)
+- [Logistic Map](#logistic-map)
 - [Features](#features)
 - [How It Works](#how-it-works)
 - [Prerequisites](#prerequisites)
@@ -27,6 +29,30 @@ This project demonstrates an image encryption technique based on **chaotic theor
 ## Introduction
 
 Chaotic systems, such as the logistic map, are highly sensitive to initial conditions. In this project, we use the logistic map to generate a chaotic sequence that scrambles and encrypts grayscale images. Decryption requires the same chaotic key used for encryption, providing a high level of security.
+
+## Chaotic Theory
+**Chaotic theory** is a branch of mathematics focusing on systems that are highly sensitive to initial conditions, known as the "butterfly effect." Even the smallest change in the starting state of a chaotic system can lead to vastly different outcomes. Chaotic systems appear random and unpredictable but are governed by deterministic rules, making them an attractive tool for encryption, where small changes in the encryption key can drastically alter the result.
+
+## Logistic Map
+
+**The logistic map**  is a simple mathematical model that exhibits chaotic behavior. It is defined by the recursive formula:
+
+### Formula
+
+The logistic map is given by the recurrence relation:
+
+$$
+x_{n+1} = r \cdot x_n \cdot (1 - x_n)
+$$
+
+Where:
+- \( x_n \) is the population at generation \(n\), normalized between 0 and 1.
+- \( r \) is the growth rate parameter.
+- \( x_{n+1} \) is the population in the next generation.
+
+For values of \(r\), the logistic map exhibits various behaviors ranging from steady states to chaotic behavior.
+
+<p><a href="https://commons.wikimedia.org/wiki/File:LogisticMap_BifurcationDiagram.png#/media/File:LogisticMap_BifurcationDiagram.png"><img src="https://upload.wikimedia.org/wikipedia/commons/7/7d/LogisticMap_BifurcationDiagram.png" alt="LogisticMap BifurcationDiagram.png"  width="500"></a><br>By <a href="//commons.wikimedia.org/w/index.php?title=User:PAR&amp;action=edit&amp;redlink=1" class="new" title="User:PAR (page does not exist)">PAR</a> - <span class="int-own-work" lang="en">Own work</span>, Public Domain, <a href="https://commons.wikimedia.org/w/index.php?curid=323398">Link</a></p>
 
 ## Features
 
